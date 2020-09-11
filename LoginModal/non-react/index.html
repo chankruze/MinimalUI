@@ -1,0 +1,104 @@
+<!--
+Author: chankruze (chankruze@geekofia.in)
+Created: Thu Sep 10 2020 12:33:43 GMT+0530 (India Standard Time)
+
+Copyright (c) Geekofia 2020 and beyond
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <button id="myBtn">Open Modal</button>
+
+    <div id="newLoginModal" class="g-modal">
+        <!-- Modal content -->
+        <div class="g-modal-content">
+            <!-- Close Button -->
+            <span class="close-g-modal">&times;</span>
+            <div class="wrapper">
+                <!-- Left Half -->
+                <div class="left-half">
+                    <span class="up-heading">
+                        <span>Looks like you're new here!</span>
+                    </span>
+                    <p class="sub-heading">
+                        <span>Sign up with your mobile number to get started</span>
+                        <div class="wrap-steps">
+                            <p>1. Enter mobile number</p>
+                            <p>2. Enter OTP received</p>
+                            <p>3. Choose password</p>
+                        </div>
+                    </p>
+                </div>
+                <!-- Right Half -->
+                <div class="right-half">
+                    <!--
+                        ################################################################
+                        This is a multi step login modal, only same components will be
+                        visible and rect needs to be hidden.
+
+                        For example:
+                        1. on Sign Up (register) page only `.g-input.phone` and `#btn-otp` and/or
+                            `#btn-continue` will be displayed and rest input and buttons must behidden.
+                            Use JS to toggle visibility.
+                    -->
+                    <form id="form-sign-up">
+                        <!-- SIGN UP-->
+                        <div class="g-input-group">
+                            <label class="g-input-label">phone</label>
+                            <div class="input-wrap">
+                                <span class="g-country-tel-code">+91</span>
+                                <input class="g-input phone" type="text" id="" placeholder="Enter mobile number"
+                                    maxlength="10">
+                            </div>
+                        </div>
+                        <!-- LOGIN -->
+                        <div class="g-input-group">
+                            <label class="g-input-label">password</label>
+                            <div class="input-wrap">
+                                <span class="g-btn-show-pass">&times;</span>
+                                <input class="g-input password" type="password" id="" placeholder="Enter password"
+                                    maxlength="20">
+                                <span class="g-btn-forgot-pass">Forgot?</span>
+                            </div>
+                        </div>
+                        <!-- SIGN UP -->
+                        <div class="g-input-group">
+                            <label class="g-input-label">OTP</label>
+                            <div class="input-wrap">
+                                <input class="g-input otp" type="number" id="" placeholder="Enter OTP" pattern="\d*"
+                                    onKeyPress="if(this.value.length==8) return false;">
+                            </div>
+                        </div>
+                        <!-- LOGIN -->
+                        <div class="clip-button">
+                            <button type="submit" class="g-btn" id="btn-login">login</button>
+                        </div>
+
+                        <!-- SIGN UP-->
+                        <div class="clip-button">
+                            <button class="g-btn" id="btn-otp">Receive OTP</button>
+                        </div>
+                        <div class="clip-button">
+                            <button type="submit" class="g-btn" id="btn-continue">continue</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
